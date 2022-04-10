@@ -1,0 +1,927 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{908E12D7-A02D-481E-B848-02FF648C50FB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TheSnehiNetwork</RootNamespace>
+    <AssemblyName>TheSnehiNetwork</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44390</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserCodeFirstController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CodeFirst.cs" />
+    <Compile Include="Models\EFModels.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFModels.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EFModels.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EFModels.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFModels.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserTable.cs">
+      <DependentUpon>EFModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Geco\about-us.html" />
+    <Content Include="Geco\blog-details.html" />
+    <Content Include="Geco\blog.html" />
+    <Content Include="Geco\community.html" />
+    <Content Include="Geco\contact.html" />
+    <Content Include="Geco\css\animate.min.css" />
+    <Content Include="Geco\css\aos.css" />
+    <Content Include="Geco\css\bootstrap.min.css" />
+    <Content Include="Geco\css\default.css" />
+    <Content Include="Geco\css\fontawesome-all.min.css" />
+    <Content Include="Geco\css\magnific-popup.css" />
+    <Content Include="Geco\css\meanmenu.css" />
+    <Content Include="Geco\css\odometer.css" />
+    <Content Include="Geco\css\owl.carousel.min.css" />
+    <Content Include="Geco\css\responsive.css" />
+    <Content Include="Geco\css\slick.css" />
+    <Content Include="Geco\css\style.css" />
+    <Content Include="Geco\fonts\fa-brands-400.eot" />
+    <Content Include="Geco\fonts\fa-brands-400.svg" />
+    <Content Include="Geco\fonts\fa-brands-400.ttf" />
+    <Content Include="Geco\fonts\fa-brands-400.woff" />
+    <Content Include="Geco\fonts\fa-brands-400.woff2" />
+    <Content Include="Geco\fonts\fa-regular-400.eot" />
+    <Content Include="Geco\fonts\fa-regular-400.svg" />
+    <Content Include="Geco\fonts\fa-regular-400.ttf" />
+    <Content Include="Geco\fonts\fa-regular-400.woff" />
+    <Content Include="Geco\fonts\fa-regular-400.woff2" />
+    <Content Include="Geco\fonts\fa-solid-900.eot" />
+    <Content Include="Geco\fonts\fa-solid-900.svg" />
+    <Content Include="Geco\fonts\fa-solid-900.ttf" />
+    <Content Include="Geco\fonts\fa-solid-900.woff" />
+    <Content Include="Geco\fonts\fa-solid-900.woff2" />
+    <Content Include="Geco\fonts\grind_demolished-webfont.woff" />
+    <Content Include="Geco\fonts\grind_demolished-webfont.woff2" />
+    <Content Include="Geco\game-overview.html" />
+    <Content Include="Geco\game-single.html" />
+    <Content Include="Geco\img\58d7005687456f7f1d8b46b6_da39a3ee5e6b4b0d3255bfef95601890afd80709 - Copy.jpg" />
+    <Content Include="Geco\img\58d7005687456f7f1d8b46b6_da39a3ee5e6b4b0d3255bfef95601890afd80709.jpg" />
+    <Content Include="Geco\img\bg\area_bg01.jpg" />
+    <Content Include="Geco\img\bg\area_bg02.jpg" />
+    <Content Include="Geco\img\bg\brand_bg.jpg" />
+    <Content Include="Geco\img\bg\breadcrumb_bg.jpg" />
+    <Content Include="Geco\img\bg\breadcrumb_bg02.jpg" />
+    <Content Include="Geco\img\bg\breadcrumb_bg03.jpg" />
+    <Content Include="Geco\img\bg\cta_bg.jpg" />
+    <Content Include="Geco\img\bg\donation_bg.jpg" />
+    <Content Include="Geco\img\bg\featured_game_bg.png" />
+    <Content Include="Geco\img\bg\features_bg.jpg" />
+    <Content Include="Geco\img\bg\footer_bg.jpg" />
+    <Content Include="Geco\img\bg\fourth_header_top_bg.jpg" />
+    <Content Include="Geco\img\bg\gamer_list_icon_bg.jpg" />
+    <Content Include="Geco\img\bg\game_gallery_bg.png" />
+    <Content Include="Geco\img\bg\game_manage_bg.jpg" />
+    <Content Include="Geco\img\bg\h3_header_bg - Copy.jpg" />
+    <Content Include="Geco\img\bg\h3_header_bg.jpg" />
+    <Content Include="Geco\img\bg\header_bg - Copy.jpg" />
+    <Content Include="Geco\img\bg\header_bg.jpg" />
+    <Content Include="Geco\img\bg\header_bottom_bg - Copy - Copy.png" />
+    <Content Include="Geco\img\bg\header_bottom_bg.png" />
+    <Content Include="Geco\img\bg\header_social_bg.jpg" />
+    <Content Include="Geco\img\bg\home_four_area_bg.png" />
+    <Content Include="Geco\img\bg\home_four_shop_bg.jpg" />
+    <Content Include="Geco\img\bg\just_gamer_bg.jpg" />
+    <Content Include="Geco\img\bg\latest_match_bg.jpg" />
+    <Content Include="Geco\img\bg\my_info_box_bg.png" />
+    <Content Include="Geco\img\bg\my_info_box_hover.png" />
+    <Content Include="Geco\img\bg\my_match_bg.jpg" />
+    <Content Include="Geco\img\bg\my_match_box.png" />
+    <Content Include="Geco\img\bg\released_slide_bg.jpg" />
+    <Content Include="Geco\img\bg\s_brand_bg.jpg" />
+    <Content Include="Geco\img\bg\s_footer_bg.jpg" />
+    <Content Include="Geco\img\bg\team_content_bg.png" />
+    <Content Include="Geco\img\bg\team_content_hover_bg.png" />
+    <Content Include="Geco\img\bg\third_about_bg.jpg" />
+    <Content Include="Geco\img\bg\third_contact_bg.jpg" />
+    <Content Include="Geco\img\bg\third_team_bg.jpg" />
+    <Content Include="Geco\img\bg\t_footer_bg.jpg" />
+    <Content Include="Geco\img\bg\upc_game_bg.jpg" />
+    <Content Include="Geco\img\blog\blog_details_img01.jpg" />
+    <Content Include="Geco\img\blog\blog_details_img02.jpg" />
+    <Content Include="Geco\img\blog\blog_thumb01.jpg" />
+    <Content Include="Geco\img\blog\blog_thumb02.jpg" />
+    <Content Include="Geco\img\blog\blog_thumb03.jpg" />
+    <Content Include="Geco\img\blog\comment_thumb01.jpg" />
+    <Content Include="Geco\img\blog\comment_thumb02.jpg" />
+    <Content Include="Geco\img\blog\home_four_blog_thumb01.jpg" />
+    <Content Include="Geco\img\blog\home_four_blog_thumb02.jpg" />
+    <Content Include="Geco\img\blog\home_four_blog_thumb03.jpg" />
+    <Content Include="Geco\img\blog\rc_post_thumb01.jpg" />
+    <Content Include="Geco\img\blog\rc_post_thumb02.jpg" />
+    <Content Include="Geco\img\blog\rc_post_thumb03.jpg" />
+    <Content Include="Geco\img\blog\sidebar_about_thumb.jpg" />
+    <Content Include="Geco\img\blog\s_blog_thumb01.jpg" />
+    <Content Include="Geco\img\blog\s_blog_thumb02.jpg" />
+    <Content Include="Geco\img\blog\s_blog_thumb03.jpg" />
+    <Content Include="Geco\img\blog\trend_match_thumb01.png" />
+    <Content Include="Geco\img\blog\trend_match_thumb02.png" />
+    <Content Include="Geco\img\blog\trend_match_thumb03.png" />
+    <Content Include="Geco\img\blog\trend_match_thumb04.png" />
+    <Content Include="Geco\img\blog\trend_match_thumb05.png" />
+    <Content Include="Geco\img\blog\trend_match_thumb06.png" />
+    <Content Include="Geco\img\blog\t_blog_thumb01.jpg" />
+    <Content Include="Geco\img\blog\t_blog_thumb02.jpg" />
+    <Content Include="Geco\img\blog\t_blog_thumb03.jpg" />
+    <Content Include="Geco\img\brand\brand_logo01.png" />
+    <Content Include="Geco\img\brand\brand_logo02.png" />
+    <Content Include="Geco\img\brand\brand_logo03.png" />
+    <Content Include="Geco\img\brand\brand_logo04.png" />
+    <Content Include="Geco\img\brand\brand_logo05.png" />
+    <Content Include="Geco\img\brand\brand_logo06.png" />
+    <Content Include="Geco\img\brand\t_brand_logo01.png" />
+    <Content Include="Geco\img\brand\t_brand_logo02.png" />
+    <Content Include="Geco\img\brand\t_brand_logo03.png" />
+    <Content Include="Geco\img\brand\t_brand_logo04.png" />
+    <Content Include="Geco\img\brand\t_brand_logo05.png" />
+    <Content Include="Geco\img\favicon.png" />
+    <Content Include="Geco\img\four_slider_img01.png" />
+    <Content Include="Geco\img\icon\arrow_left.png" />
+    <Content Include="Geco\img\icon\arrow_right.png" />
+    <Content Include="Geco\img\icon\cta_icon.png" />
+    <Content Include="Geco\img\icon\fact_icon01.png" />
+    <Content Include="Geco\img\icon\fact_icon02.png" />
+    <Content Include="Geco\img\icon\fact_icon03.png" />
+    <Content Include="Geco\img\icon\fact_icon04.png" />
+    <Content Include="Geco\img\icon\featured_game_icon.png" />
+    <Content Include="Geco\img\icon\gamer_list_icon01.png" />
+    <Content Include="Geco\img\icon\gamer_list_icon02.png" />
+    <Content Include="Geco\img\icon\gamer_list_icon03.png" />
+    <Content Include="Geco\img\icon\map_marker.png" />
+    <Content Include="Geco\img\icon\play_btn.png" />
+    <Content Include="Geco\img\icon\preloader.svg" />
+    <Content Include="Geco\img\icon\testi_quote.png" />
+    <Content Include="Geco\img\icon\video_play_icon.png" />
+    <Content Include="Geco\img\images\about_award.png" />
+    <Content Include="Geco\img\images\about_us_img.jpg" />
+    <Content Include="Geco\img\images\btn_overlay.png" />
+    <Content Include="Geco\img\images\card_img.png" />
+    <Content Include="Geco\img\images\clan_logo.png" />
+    <Content Include="Geco\img\images\community_bg_shape.png" />
+    <Content Include="Geco\img\images\cta_img.png" />
+    <Content Include="Geco\img\images\dontaion_img.png" />
+    <Content Include="Geco\img\images\dots.png" />
+    <Content Include="Geco\img\images\featured_game_thumb01.jpg" />
+    <Content Include="Geco\img\images\featured_game_thumb02.jpg" />
+    <Content Include="Geco\img\images\featured_game_thumb03.jpg" />
+    <Content Include="Geco\img\images\featured_game_thumb04.jpg" />
+    <Content Include="Geco\img\images\featured_game_thumb05.jpg" />
+    <Content Include="Geco\img\images\featured_game_thumb06.jpg" />
+    <Content Include="Geco\img\images\features_thumb01.jpg" />
+    <Content Include="Geco\img\images\features_thumb02.jpg" />
+    <Content Include="Geco\img\images\features_thumb03.jpg" />
+    <Content Include="Geco\img\images\features_thumb04.jpg" />
+    <Content Include="Geco\img\images\features_thumb05.jpg" />
+    <Content Include="Geco\img\images\features_thumb06.jpg" />
+    <Content Include="Geco\img\images\footer_fire.png" />
+    <Content Include="Geco\img\images\gamers_bg_conve01.png" />
+    <Content Include="Geco\img\images\gamers_bg_conve02.png" />
+    <Content Include="Geco\img\images\gamers_circle_line.png" />
+    <Content Include="Geco\img\images\gamers_circle_shape.png" />
+    <Content Include="Geco\img\images\game_gallery_01.png" />
+    <Content Include="Geco\img\images\game_gallery_02.png" />
+    <Content Include="Geco\img\images\game_gallery_03.png" />
+    <Content Include="Geco\img\images\game_gallery_04.png" />
+    <Content Include="Geco\img\images\game_overview_thumb.png" />
+    <Content Include="Geco\img\images\game_section_shape.png" />
+    <Content Include="Geco\img\images\game_single_gallery01.jpg" />
+    <Content Include="Geco\img\images\game_single_gallery02.jpg" />
+    <Content Include="Geco\img\images\game_single_gallery03.jpg" />
+    <Content Include="Geco\img\images\game_single_gallery04.jpg" />
+    <Content Include="Geco\img\images\game_single_gallery05.jpg" />
+    <Content Include="Geco\img\images\game_single_gallery06.jpg" />
+    <Content Include="Geco\img\images\game_single_img01.jpg" />
+    <Content Include="Geco\img\images\game_single_img02.jpg" />
+    <Content Include="Geco\img\images\inner_about_img01.png" />
+    <Content Include="Geco\img\images\inner_about_img02.png" />
+    <Content Include="Geco\img\images\inner_about_img03.png" />
+    <Content Include="Geco\img\images\just_gamers_chart.png" />
+    <Content Include="Geco\img\images\just_gamers_img.png" />
+    <Content Include="Geco\img\images\latest_match_thumb01.jpg" />
+    <Content Include="Geco\img\images\latest_match_thumb02.jpg" />
+    <Content Include="Geco\img\images\latest_match_thumb03.jpg" />
+    <Content Include="Geco\img\images\latest_match_thumb04.jpg" />
+    <Content Include="Geco\img\images\live_match_img.jpg" />
+    <Content Include="Geco\img\images\medale_shape.png" />
+    <Content Include="Geco\img\images\offer_count_bg.png" />
+    <Content Include="Geco\img\images\overview_history_img.jpg" />
+    <Content Include="Geco\img\images\overview_history_thumb01.jpg" />
+    <Content Include="Geco\img\images\overview_history_thumb02.jpg" />
+    <Content Include="Geco\img\images\released_game_brush.png" />
+    <Content Include="Geco\img\images\released_game_img01.jpg" />
+    <Content Include="Geco\img\images\released_game_img02 %281%29.jpg" />
+    <Content Include="Geco\img\images\released_game_img02.jpg" />
+    <Content Include="Geco\img\images\released_game_img03.jpg" />
+    <Content Include="Geco\img\images\release_game_nav01.jpg" />
+    <Content Include="Geco\img\images\release_game_nav02.jpg" />
+    <Content Include="Geco\img\images\release_game_nav03.jpg" />
+    <Content Include="Geco\img\images\section_line.png" />
+    <Content Include="Geco\img\images\sidebar_new_game01.jpg" />
+    <Content Include="Geco\img\images\sidebar_new_game02.jpg" />
+    <Content Include="Geco\img\images\sidebar_new_game03.jpg" />
+    <Content Include="Geco\img\images\s_featured_game_thumb01.jpg" />
+    <Content Include="Geco\img\images\s_featured_game_thumb02.jpg" />
+    <Content Include="Geco\img\images\s_featured_game_thumb03.jpg" />
+    <Content Include="Geco\img\images\s_featured_game_thumb04.jpg" />
+    <Content Include="Geco\img\images\testi_avatar.png" />
+    <Content Include="Geco\img\images\third_about_img.png" />
+    <Content Include="Geco\img\images\third_about_img_shadow.png" />
+    <Content Include="Geco\img\images\title_bar.png" />
+    <Content Include="Geco\img\images\title_bar02.png" />
+    <Content Include="Geco\img\images\title_bar03.png" />
+    <Content Include="Geco\img\images\title_bar04.png" />
+    <Content Include="Geco\img\images\upcoming_game_thumb01.jpg" />
+    <Content Include="Geco\img\images\upcoming_game_thumb02.jpg" />
+    <Content Include="Geco\img\images\upcoming_game_thumb03.jpg" />
+    <Content Include="Geco\img\images\upcoming_game_thumb04.jpg" />
+    <Content Include="Geco\img\images\upcoming_game_thumb05.jpg" />
+    <Content Include="Geco\img\images\upcoming_game_thumb06.jpg" />
+    <Content Include="Geco\img\logo\58d7005687456f7f1d8b46b6_da39a3ee5e6b4b0d3255bfef95601890afd80709 - Copy.jpg" />
+    <Content Include="Geco\img\logo\58d7005687456f7f1d8b46b6_da39a3ee5e6b4b0d3255bfef95601890afd80709.jpg" />
+    <Content Include="Geco\img\logo\anky - Copy.jpg" />
+    <Content Include="Geco\img\logo\anky.jpg" />
+    <Content Include="Geco\img\logo\f_logo.png" />
+    <Content Include="Geco\img\logo\h3_logo %282%29.png" />
+    <Content Include="Geco\img\logo\h3_logo - Copy.png" />
+    <Content Include="Geco\img\logo\h3_logo.png" />
+    <Content Include="Geco\img\logo\logo.png" />
+    <Content Include="Geco\img\logo\logo_two.png" />
+    <Content Include="Geco\img\product\cart_p01.jpg" />
+    <Content Include="Geco\img\product\latest_games_thumb01.jpg" />
+    <Content Include="Geco\img\product\latest_games_thumb02.jpg" />
+    <Content Include="Geco\img\product\latest_games_thumb03.jpg" />
+    <Content Include="Geco\img\product\product_img01.jpg" />
+    <Content Include="Geco\img\product\product_img02.jpg" />
+    <Content Include="Geco\img\product\product_img03.jpg" />
+    <Content Include="Geco\img\product\product_img04.jpg" />
+    <Content Include="Geco\img\product\shop_item01.jpg" />
+    <Content Include="Geco\img\product\shop_item02.jpg" />
+    <Content Include="Geco\img\product\shop_item03.jpg" />
+    <Content Include="Geco\img\product\shop_item04.jpg" />
+    <Content Include="Geco\img\product\shop_item05.jpg" />
+    <Content Include="Geco\img\product\shop_item06.jpg" />
+    <Content Include="Geco\img\product\shop_item07.jpg" />
+    <Content Include="Geco\img\product\shop_item08.jpg" />
+    <Content Include="Geco\img\product\shop_item09.jpg" />
+    <Content Include="Geco\img\product\s_product_img01.jpg" />
+    <Content Include="Geco\img\product\s_product_img02.jpg" />
+    <Content Include="Geco\img\product\s_product_img03.jpg" />
+    <Content Include="Geco\img\product\s_product_img04.jpg" />
+    <Content Include="Geco\img\slider\fourth_banner_bg.jpg" />
+    <Content Include="Geco\img\slider\four_slider_img01.png" />
+    <Content Include="Geco\img\slider\four_slider_img02.png" />
+    <Content Include="Geco\img\slider\slider_bg.jpg" />
+    <Content Include="Geco\img\slider\slider_bg02.jpg" />
+    <Content Include="Geco\img\slider\slider_circle.png" />
+    <Content Include="Geco\img\slider\slider_img01.png" />
+    <Content Include="Geco\img\slider\slider_img02.png" />
+    <Content Include="Geco\img\slider\third_banner_bg.jpg" />
+    <Content Include="Geco\img\slider\third_banner_img.png" />
+    <Content Include="Geco\img\slider_img01.png" />
+    <Content Include="Geco\img\slider_img02.png" />
+    <Content Include="Geco\img\team\live_match_logo01.png" />
+    <Content Include="Geco\img\team\live_match_logo02.png" />
+    <Content Include="Geco\img\team\match_vs.png" />
+    <Content Include="Geco\img\team\match_vs02.png" />
+    <Content Include="Geco\img\team\my_match_clan01.png" />
+    <Content Include="Geco\img\team\my_match_clan02.png" />
+    <Content Include="Geco\img\team\my_match_clan03.png" />
+    <Content Include="Geco\img\team\my_match_clan04.png" />
+    <Content Include="Geco\img\team\my_match_clan05.png" />
+    <Content Include="Geco\img\team\my_match_clan06.png" />
+    <Content Include="Geco\img\team\team_img01.png" />
+    <Content Include="Geco\img\team\team_img02.png" />
+    <Content Include="Geco\img\team\team_img03.png" />
+    <Content Include="Geco\img\team\team_img04.png" />
+    <Content Include="Geco\img\team\team_logo01.png" />
+    <Content Include="Geco\img\team\team_logo02.png" />
+    <Content Include="Geco\img\team\team_logo03.png" />
+    <Content Include="Geco\img\team\team_logo04.png" />
+    <Content Include="Geco\img\team\team_logo05.png" />
+    <Content Include="Geco\img\team\team_logo06.png" />
+    <Content Include="Geco\img\team\team_member01.jpg" />
+    <Content Include="Geco\img\team\team_member02.jpg" />
+    <Content Include="Geco\img\team\team_member03.jpg" />
+    <Content Include="Geco\img\team\team_member04.jpg" />
+    <Content Include="Geco\index-2.html" />
+    <Content Include="Geco\index-3.html" />
+    <Content Include="Geco\index-4.html" />
+    <Content Include="Geco\index.html" />
+    <Content Include="Geco\js\aos.js" />
+    <Content Include="Geco\js\bootstrap.min.js" />
+    <Content Include="Geco\js\imagesloaded.pkgd.min.js" />
+    <Content Include="Geco\js\isotope.pkgd.min.js" />
+    <Content Include="Geco\js\jquery.appear.js" />
+    <Content Include="Geco\js\jquery.countdown.min.js" />
+    <Content Include="Geco\js\jquery.lettering.js" />
+    <Content Include="Geco\js\jquery.magnific-popup.min.js" />
+    <Content Include="Geco\js\jquery.meanmenu.min.js" />
+    <Content Include="Geco\js\jquery.odometer.min.js" />
+    <Content Include="Geco\js\jquery.scrollUp.min.js" />
+    <Content Include="Geco\js\jquery.textillate.js" />
+    <Content Include="Geco\js\main.js" />
+    <Content Include="Geco\js\owl.carousel.min.js" />
+    <Content Include="Geco\js\plugins.js" />
+    <Content Include="Geco\js\popper.min.js" />
+    <Content Include="Geco\js\slick.min.js" />
+    <Content Include="Geco\js\vendor\jquery-3.4.1.min.js" />
+    <Content Include="Geco\js\wow.min.js" />
+    <Content Include="Geco\shop.html" />
+    <Content Include="Geco\upcoming-games.html" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="img\58d7005687456f7f1d8b46b6_da39a3ee5e6b4b0d3255bfef95601890afd80709 - Copy.jpg" />
+    <Content Include="img\58d7005687456f7f1d8b46b6_da39a3ee5e6b4b0d3255bfef95601890afd80709.jpg" />
+    <Content Include="img\bg\area_bg01.jpg" />
+    <Content Include="img\bg\area_bg02.jpg" />
+    <Content Include="img\bg\brand_bg.jpg" />
+    <Content Include="img\bg\breadcrumb_bg.jpg" />
+    <Content Include="img\bg\breadcrumb_bg02.jpg" />
+    <Content Include="img\bg\breadcrumb_bg03.jpg" />
+    <Content Include="img\bg\cta_bg.jpg" />
+    <Content Include="img\bg\donation_bg.jpg" />
+    <Content Include="img\bg\featured_game_bg.png" />
+    <Content Include="img\bg\features_bg.jpg" />
+    <Content Include="img\bg\footer_bg.jpg" />
+    <Content Include="img\bg\fourth_header_top_bg.jpg" />
+    <Content Include="img\bg\gamer_list_icon_bg.jpg" />
+    <Content Include="img\bg\game_gallery_bg.png" />
+    <Content Include="img\bg\game_manage_bg.jpg" />
+    <Content Include="img\bg\h3_header_bg - Copy.jpg" />
+    <Content Include="img\bg\h3_header_bg.jpg" />
+    <Content Include="img\bg\header_bg - Copy.jpg" />
+    <Content Include="img\bg\header_bg.jpg" />
+    <Content Include="img\bg\header_bottom_bg - Copy - Copy.png" />
+    <Content Include="img\bg\header_bottom_bg.png" />
+    <Content Include="img\bg\header_social_bg.jpg" />
+    <Content Include="img\bg\home_four_area_bg.png" />
+    <Content Include="img\bg\home_four_shop_bg.jpg" />
+    <Content Include="img\bg\just_gamer_bg.jpg" />
+    <Content Include="img\bg\latest_match_bg.jpg" />
+    <Content Include="img\bg\my_info_box_bg.png" />
+    <Content Include="img\bg\my_info_box_hover.png" />
+    <Content Include="img\bg\my_match_bg.jpg" />
+    <Content Include="img\bg\my_match_box.png" />
+    <Content Include="img\bg\released_slide_bg.jpg" />
+    <Content Include="img\bg\s_brand_bg.jpg" />
+    <Content Include="img\bg\s_footer_bg.jpg" />
+    <Content Include="img\bg\team_content_bg.png" />
+    <Content Include="img\bg\team_content_hover_bg.png" />
+    <Content Include="img\bg\third_about_bg.jpg" />
+    <Content Include="img\bg\third_contact_bg.jpg" />
+    <Content Include="img\bg\third_team_bg.jpg" />
+    <Content Include="img\bg\t_footer_bg.jpg" />
+    <Content Include="img\bg\upc_game_bg.jpg" />
+    <Content Include="img\blog\blog_details_img01.jpg" />
+    <Content Include="img\blog\blog_details_img02.jpg" />
+    <Content Include="img\blog\blog_thumb01.jpg" />
+    <Content Include="img\blog\blog_thumb02.jpg" />
+    <Content Include="img\blog\blog_thumb03.jpg" />
+    <Content Include="img\blog\comment_thumb01.jpg" />
+    <Content Include="img\blog\comment_thumb02.jpg" />
+    <Content Include="img\blog\home_four_blog_thumb01.jpg" />
+    <Content Include="img\blog\home_four_blog_thumb02.jpg" />
+    <Content Include="img\blog\home_four_blog_thumb03.jpg" />
+    <Content Include="img\blog\rc_post_thumb01.jpg" />
+    <Content Include="img\blog\rc_post_thumb02.jpg" />
+    <Content Include="img\blog\rc_post_thumb03.jpg" />
+    <Content Include="img\blog\sidebar_about_thumb.jpg" />
+    <Content Include="img\blog\s_blog_thumb01.jpg" />
+    <Content Include="img\blog\s_blog_thumb02.jpg" />
+    <Content Include="img\blog\s_blog_thumb03.jpg" />
+    <Content Include="img\blog\trend_match_thumb01.png" />
+    <Content Include="img\blog\trend_match_thumb02.png" />
+    <Content Include="img\blog\trend_match_thumb03.png" />
+    <Content Include="img\blog\trend_match_thumb04.png" />
+    <Content Include="img\blog\trend_match_thumb05.png" />
+    <Content Include="img\blog\trend_match_thumb06.png" />
+    <Content Include="img\blog\t_blog_thumb01.jpg" />
+    <Content Include="img\blog\t_blog_thumb02.jpg" />
+    <Content Include="img\blog\t_blog_thumb03.jpg" />
+    <Content Include="img\brand\brand_logo01.png" />
+    <Content Include="img\brand\brand_logo02.png" />
+    <Content Include="img\brand\brand_logo03.png" />
+    <Content Include="img\brand\brand_logo04.png" />
+    <Content Include="img\brand\brand_logo05.png" />
+    <Content Include="img\brand\brand_logo06.png" />
+    <Content Include="img\brand\t_brand_logo01.png" />
+    <Content Include="img\brand\t_brand_logo02.png" />
+    <Content Include="img\brand\t_brand_logo03.png" />
+    <Content Include="img\brand\t_brand_logo04.png" />
+    <Content Include="img\brand\t_brand_logo05.png" />
+    <Content Include="img\centos-brands.svg" />
+    <Content Include="img\favicon.png" />
+    <Content Include="img\four_slider_img01.png" />
+    <Content Include="img\icon\arrow_left.png" />
+    <Content Include="img\icon\arrow_right.png" />
+    <Content Include="img\icon\cta_icon.png" />
+    <Content Include="img\icon\fact_icon01.png" />
+    <Content Include="img\icon\fact_icon02.png" />
+    <Content Include="img\icon\fact_icon03.png" />
+    <Content Include="img\icon\fact_icon04.png" />
+    <Content Include="img\icon\featured_game_icon.png" />
+    <Content Include="img\icon\gamer_list_icon01.png" />
+    <Content Include="img\icon\gamer_list_icon02.png" />
+    <Content Include="img\icon\gamer_list_icon03.png" />
+    <Content Include="img\icon\map_marker.png" />
+    <Content Include="img\icon\play_btn.png" />
+    <Content Include="img\icon\preloader.svg" />
+    <Content Include="img\icon\testi_quote.png" />
+    <Content Include="img\icon\video_play_icon.png" />
+    <Content Include="img\images\about_award.png" />
+    <Content Include="img\images\about_us_img.jpg" />
+    <Content Include="img\images\btn_overlay.png" />
+    <Content Include="img\images\card_img.png" />
+    <Content Include="img\images\clan_logo.png" />
+    <Content Include="img\images\community_bg_shape.png" />
+    <Content Include="img\images\cta_img.png" />
+    <Content Include="img\images\dontaion_img.png" />
+    <Content Include="img\images\dots.png" />
+    <Content Include="img\images\featured_game_thumb01.jpg" />
+    <Content Include="img\images\featured_game_thumb02.jpg" />
+    <Content Include="img\images\featured_game_thumb03.jpg" />
+    <Content Include="img\images\featured_game_thumb04.jpg" />
+    <Content Include="img\images\featured_game_thumb05.jpg" />
+    <Content Include="img\images\featured_game_thumb06.jpg" />
+    <Content Include="img\images\features_thumb01.jpg" />
+    <Content Include="img\images\features_thumb02.jpg" />
+    <Content Include="img\images\features_thumb03.jpg" />
+    <Content Include="img\images\features_thumb04.jpg" />
+    <Content Include="img\images\features_thumb05.jpg" />
+    <Content Include="img\images\features_thumb06.jpg" />
+    <Content Include="img\images\footer_fire.png" />
+    <Content Include="img\images\gamers_bg_conve01.png" />
+    <Content Include="img\images\gamers_bg_conve02.png" />
+    <Content Include="img\images\gamers_circle_line.png" />
+    <Content Include="img\images\gamers_circle_shape.png" />
+    <Content Include="img\images\game_gallery_01.png" />
+    <Content Include="img\images\game_gallery_02.png" />
+    <Content Include="img\images\game_gallery_03.png" />
+    <Content Include="img\images\game_gallery_04.png" />
+    <Content Include="img\images\game_overview_thumb.png" />
+    <Content Include="img\images\game_section_shape.png" />
+    <Content Include="img\images\game_single_gallery01.jpg" />
+    <Content Include="img\images\game_single_gallery02.jpg" />
+    <Content Include="img\images\game_single_gallery03.jpg" />
+    <Content Include="img\images\game_single_gallery04.jpg" />
+    <Content Include="img\images\game_single_gallery05.jpg" />
+    <Content Include="img\images\game_single_gallery06.jpg" />
+    <Content Include="img\images\game_single_img01.jpg" />
+    <Content Include="img\images\game_single_img02.jpg" />
+    <Content Include="img\images\inner_about_img01.png" />
+    <Content Include="img\images\inner_about_img02.png" />
+    <Content Include="img\images\inner_about_img03.png" />
+    <Content Include="img\images\just_gamers_chart.png" />
+    <Content Include="img\images\just_gamers_img.png" />
+    <Content Include="img\images\latest_match_thumb01.jpg" />
+    <Content Include="img\images\latest_match_thumb02.jpg" />
+    <Content Include="img\images\latest_match_thumb03.jpg" />
+    <Content Include="img\images\latest_match_thumb04.jpg" />
+    <Content Include="img\images\live_match_img.jpg" />
+    <Content Include="img\images\medale_shape.png" />
+    <Content Include="img\images\offer_count_bg.png" />
+    <Content Include="img\images\overview_history_img.jpg" />
+    <Content Include="img\images\overview_history_thumb01.jpg" />
+    <Content Include="img\images\overview_history_thumb02.jpg" />
+    <Content Include="img\images\released_game_brush.png" />
+    <Content Include="img\images\released_game_img01.jpg" />
+    <Content Include="img\images\released_game_img02.jpg" />
+    <Content Include="img\images\released_game_img03.jpg" />
+    <Content Include="img\images\release_game_nav01.jpg" />
+    <Content Include="img\images\release_game_nav02.jpg" />
+    <Content Include="img\images\release_game_nav03.jpg" />
+    <Content Include="img\images\section_line.png" />
+    <Content Include="img\images\sidebar_new_game01.jpg" />
+    <Content Include="img\images\sidebar_new_game02.jpg" />
+    <Content Include="img\images\sidebar_new_game03.jpg" />
+    <Content Include="img\images\s_featured_game_thumb01.jpg" />
+    <Content Include="img\images\s_featured_game_thumb02.jpg" />
+    <Content Include="img\images\s_featured_game_thumb03.jpg" />
+    <Content Include="img\images\s_featured_game_thumb04.jpg" />
+    <Content Include="img\images\testi_avatar.png" />
+    <Content Include="img\images\third_about_img.png" />
+    <Content Include="img\images\third_about_img_shadow.png" />
+    <Content Include="img\images\title_bar.png" />
+    <Content Include="img\images\title_bar02.png" />
+    <Content Include="img\images\title_bar03.png" />
+    <Content Include="img\images\title_bar04.png" />
+    <Content Include="img\images\upcoming_game_thumb01.jpg" />
+    <Content Include="img\images\upcoming_game_thumb02.jpg" />
+    <Content Include="img\images\upcoming_game_thumb03.jpg" />
+    <Content Include="img\images\upcoming_game_thumb04.jpg" />
+    <Content Include="img\images\upcoming_game_thumb05.jpg" />
+    <Content Include="img\images\upcoming_game_thumb06.jpg" />
+    <Content Include="img\logo\58d7005687456f7f1d8b46b6_da39a3ee5e6b4b0d3255bfef95601890afd80709.jpg" />
+    <Content Include="img\logo\anky - Copy.jpg" />
+    <Content Include="img\logo\anky.jpg" />
+    <Content Include="img\logo\BingWallpaper.exe" />
+    <Content Include="img\logo\f_logo.png" />
+    <Content Include="img\logo\h3_logo %282%29.png" />
+    <Content Include="img\logo\h3_logo - Copy.png" />
+    <Content Include="img\logo\h3_logo.png" />
+    <Content Include="img\logo\logo.png" />
+    <Content Include="img\logo\logo1 %281%29.png" />
+    <Content Include="img\logo\logo1.jpg" />
+    <Content Include="img\logo\logo1.png" />
+    <Content Include="img\logo\logo2.png" />
+    <Content Include="img\logo\logo_two.png" />
+    <Content Include="img\nfs-the-run-babes-wallpaper-preview.jpg" />
+    <Content Include="img\product\cart_p01.jpg" />
+    <Content Include="img\product\latest_games_thumb01.jpg" />
+    <Content Include="img\product\latest_games_thumb02.jpg" />
+    <Content Include="img\product\latest_games_thumb03.jpg" />
+    <Content Include="img\product\product_img01.jpg" />
+    <Content Include="img\product\product_img02.jpg" />
+    <Content Include="img\product\product_img03.jpg" />
+    <Content Include="img\product\product_img04.jpg" />
+    <Content Include="img\product\shop_item01.jpg" />
+    <Content Include="img\product\shop_item02.jpg" />
+    <Content Include="img\product\shop_item03.jpg" />
+    <Content Include="img\product\shop_item04.jpg" />
+    <Content Include="img\product\shop_item05.jpg" />
+    <Content Include="img\product\shop_item06.jpg" />
+    <Content Include="img\product\shop_item07.jpg" />
+    <Content Include="img\product\shop_item08.jpg" />
+    <Content Include="img\product\shop_item09.jpg" />
+    <Content Include="img\product\s_product_img01.jpg" />
+    <Content Include="img\product\s_product_img02.jpg" />
+    <Content Include="img\product\s_product_img03.jpg" />
+    <Content Include="img\product\s_product_img04.jpg" />
+    <Content Include="img\R %281%29.jpg" />
+    <Content Include="img\R.jpg" />
+    <Content Include="img\slider\fourth_banner_bg.jpg" />
+    <Content Include="img\slider\four_slider_img01.png" />
+    <Content Include="img\slider\four_slider_img02.png" />
+    <Content Include="img\slider\slider_bg.jpg" />
+    <Content Include="img\slider\slider_bg02.jpg" />
+    <Content Include="img\slider\slider_circle.png" />
+    <Content Include="img\slider\slider_img01.png" />
+    <Content Include="img\slider\slider_img02.png" />
+    <Content Include="img\slider\third_banner_bg.jpg" />
+    <Content Include="img\slider\third_banner_img.png" />
+    <Content Include="img\slider_img01.png" />
+    <Content Include="img\slider_img02.png" />
+    <Content Include="img\Special_with_a_cap_wow.webp" />
+    <Content Include="img\team\live_match_logo01.png" />
+    <Content Include="img\team\live_match_logo02.png" />
+    <Content Include="img\team\match_vs.png" />
+    <Content Include="img\team\match_vs02.png" />
+    <Content Include="img\team\my_match_clan01.png" />
+    <Content Include="img\team\my_match_clan02.png" />
+    <Content Include="img\team\my_match_clan03.png" />
+    <Content Include="img\team\my_match_clan04.png" />
+    <Content Include="img\team\my_match_clan05.png" />
+    <Content Include="img\team\my_match_clan06.png" />
+    <Content Include="img\team\team_img01.png" />
+    <Content Include="img\team\team_img02.png" />
+    <Content Include="img\team\team_img03.png" />
+    <Content Include="img\team\team_img04.png" />
+    <Content Include="img\team\team_logo01.png" />
+    <Content Include="img\team\team_logo02.png" />
+    <Content Include="img\team\team_logo03.png" />
+    <Content Include="img\team\team_logo04.png" />
+    <Content Include="img\team\team_logo05.png" />
+    <Content Include="img\team\team_logo06.png" />
+    <Content Include="img\team\team_member01.jpg" />
+    <Content Include="img\team\team_member02.jpg" />
+    <Content Include="img\team\team_member03.jpg" />
+    <Content Include="img\team\team_member04.jpg" />
+    <Content Include="img\wallpaperflare.com_wallpaper %281%29.jpg" />
+    <Content Include="img\wallpaperflare.com_wallpaper %282%29.jpg" />
+    <Content Include="img\wallpaperflare.com_wallpaper %283%29.jpg" />
+    <Content Include="img\wallpaperflare.com_wallpaper %284%29.jpg" />
+    <Content Include="img\wallpaperflare.com_wallpaper %285%29.jpg" />
+    <Content Include="img\wallpaperflare.com_wallpaper %286%29.jpg" />
+    <Content Include="img\wallpaperflare.com_wallpaper %287%29.jpg" />
+    <Content Include="img\wallpaperflare.com_wallpaper %288%29.jpg" />
+    <Content Include="img\wallpaperflare.com_wallpaper.jpg" />
+    <Content Include="img\wp2548272.jpg" />
+    <Content Include="Models\EFModels.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EFModels.edmx</DependentUpon>
+      <LastGenOutput>EFModels.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\EFModels.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EFModels.edmx</DependentUpon>
+      <LastGenOutput>EFModels.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <EntityDeploy Include="Models\EFModels.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EFModels.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\EFModels.edmx.diagram">
+      <DependentUpon>EFModels.edmx</DependentUpon>
+    </Content>
+    <Content Include="img\logo\c0c980f3-57b0-43a5-8b6f-31b55fab58bb_1649526398230.pdf" />
+    <None Include="Scripts\jquery-3.6.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.6.0.js" />
+    <Content Include="Scripts\jquery-3.6.0.min.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\AllUser.cshtml" />
+    <Content Include="Views\Home\Blog.cshtml" />
+    <Content Include="Views\Home\Community.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Overview.cshtml" />
+    <Content Include="Views\Home\Pages.cshtml" />
+    <Content Include="Views\Home\Store.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\Footer.cshtml" />
+    <Content Include="Views\Shared\LoginRegister.cshtml" />
+    <Content Include="Views\Shared\Nav.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Admin\Create.cshtml" />
+    <Content Include="Views\Admin\Delete.cshtml" />
+    <Content Include="Views\Admin\Details.cshtml" />
+    <Content Include="Views\Admin\Edit.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\UserCodeFirst\Create.cshtml" />
+    <Content Include="Views\UserCodeFirst\Delete.cshtml" />
+    <Content Include="Views\UserCodeFirst\Details.cshtml" />
+    <Content Include="Views\UserCodeFirst\Edit.cshtml" />
+    <Content Include="Views\UserCodeFirst\Index.cshtml" />
+    <Content Include="Views\Home\Members.cshtml" />
+    <None Include="Web" />
+    <Content Include="Web.config" />
+    <None Include="Web.Debug">
+      <DependentUpon>Web</DependentUpon>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release">
+      <DependentUpon>Web</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.6.0.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64411</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44390/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

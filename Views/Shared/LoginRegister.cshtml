@@ -1,0 +1,163 @@
+﻿<!-- Login -->
+<div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="LoginTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-black show active" id="LoginTitle" style="color:black;">Login</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+             
+                    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+
+
+                        <div class="form-group">
+                            <label for="UserMail">Email address</label>
+                            <input type="email" class="form-control" id="UserMail" aria-describedby="UserMail" name="UserMail" placeholder="Enter email" required>
+                            <small id="UserMail" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="UserPassword">Password</label>
+                            <input type="password" class="form-control" id="UserPassword" name="UserPassword" placeholder="Password" required>
+                        </div>
+                        <button type="submit" class="btn btn-outline-success">Submit</button>
+
+                    }
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Registration" data-dismiss="modal">Registration</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- Registration -->
+<div class="modal fade" id="Registration" tabindex="-1" role="dialog" aria-labelledby="RegistrationTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="RegistrationTitle" style="color:black;">Registration</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+               
+                @using (Html.BeginForm("ClientRegister", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <form style="color:black;">
+                        <div class="form-group">
+                            <label for="UserName">Full Name</label>
+                            <input type="text" class="form-control" name="UserName" id="UserName" aria-describedby="UserName" placeholder="Enter Name" required>
+                            <small id="UserName" class="form-text text-muted">Enter your name.</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="UserMail">Email address</label>
+                            <input type="email" class="form-control" id="UserMail" name="UserMail" aria-describedby="UserMail" placeholder="Enter email" required>
+                            <small id="UserMail" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="UserPassword">Password</label>
+                            <input type="password" class="form-control" id="UserPassword" name="UserPassword" placeholder="Password" required>
+                            <small id="UserPassword" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="checkbox" required>
+                            <label class="form-check-label" for="checkbox">I Agree the <a href="#">Term & Condition </a> </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                }
+
+
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Login" data-dismiss="modal">Login</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@using (Html.BeginForm("CreateAccount", "account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.TextBoxFor(model => model.myuser_name, new { @class = "form-control w3-padding", @placeholder = "name", required = "" })
+    @Html.ValidationMessageFor(model => model.myuser_name, "", new { @class = "error" })
+    <br />
+    @Html.TextBoxFor(model => model.mysuser_mail, new { @class = "form-control w3-padding", @placeholder = "email", required = "", type = "email" })
+    @Html.ValidationMessageFor(model => model.mysuser_mail, "", new { @class = "error" })
+    <br />
+    @Html.TextBoxFor(model => model.myuser_mobile, new { @class = "form-control w3-padding", @placeholder = "Mobile", required = "" })
+    @Html.ValidationMessageFor(model => model.myuser_mobile, "", new { @class = "error" })
+    <br />
+    <label class="w3-input w3-border w3-hover-blue w3-red">
+        <i class="glyphicon glyphicon-cloud-upload"></i> Upload Image
+        <input type="file" name="myuser_image" id="img" class="form-control w3-hide " accept="image/*" required />
+    </label>
+    @Html.ValidationMessageFor(model => model.myuser_image, "", new { @class = "error" })
+    <br />
+    @Html.PasswordFor(model => model.myuser_pwd, new { @class = "form-control w3-padding", @placeholder = "Password", required = "", type = "password" })
+    @Html.ValidationMessageFor(model => model.myuser_pwd, "", new { @class = "error" })
+    <br />
+    @Html.TextBoxFor(model => model.myuser_xid, new { @class = "form-control w3-padding ", @placeholder = "Z55BXT", required = "", type = "text" })
+    @Html.ValidationMessageFor(model => model.myuser_xid, "", new { @class = "error" })
+    <br />
+    <input type="submit" value="Register Data" class="btn btn-success w3-input" />
+}*@

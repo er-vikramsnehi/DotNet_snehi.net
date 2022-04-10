@@ -1,0 +1,373 @@
+﻿    <!-- preloader -->
+<div id="preloader">
+    <div id="loading-center">
+        <div id="loading-center-absolute">
+            <img src="~/Geco/img/icon/preloader.svg" alt="">
+        </div>
+    </div>
+</div>
+<!-- preloader-end -->
+
+
+
+
+<!-- header-area -->
+<header class="third-header-bg">
+    <div class="bg"></div>
+    <div class="container custom-container">
+        <div class="header-top-area t-header-top-area d-none d-lg-block">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="header-top-social">
+                        <ul>
+                            <li>Follow</li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="header-top-login">
+                        <ul>
+                            @if (Session["name"] != null)
+                            {
+
+                                <li class="header-shop-cart">
+                                    <a> @Session["name"]</a>
+                                    <ul class="minicart">
+                                        <li class="d-flex align-items-start">
+                                            <div class="cart-img">
+                                                <a href="#">
+                                                    <img src="img/product/cart_p01.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="cart-content">
+                                                <h4>
+                                                    <a href="#">Xbox One Controller</a>
+                                                </h4>
+                                                <div class="cart-price">
+                                                    <span class="new">$229.9</span>
+                                                    <span>
+                                                        <del>$229.9</del>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="del-icon">
+                                                <a href="#">
+                                                    <i class="far fa-trash-alt"></i>
+                                                </a>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="total-price">
+                                                <span class="f-left">Total:</span>
+                                                <span class="f-right">$239.9</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkout-link">
+                                                <a href="~/">Shopping Cart</a>
+                                                <a class="red-color" href="~/">Checkout</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            }
+                            else
+                            {
+
+
+
+
+                                <li><a href="#" data-toggle="modal" data-target="#Registration"><i class="far fa-edit"></i>Register</a></li>
+                                <li class="or">or</li>
+                                <li><a href="#" data-toggle="modal" data-target="#Login"><i class="far fa-edit"></i>sign in</a></li>
+
+                            }
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div id="sticky-header">
+        <div class="container custom-container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="main-menu menu-style-two">
+                        <nav>
+                            <div class="logo d-block d-lg-none">
+                                <a href="~/">
+                                    <img src="~/img/logo/logo2.png" alt="Logo" style="height:110px;width:100px;">
+                                </a>
+                                @*<img src="~/Geco/img/58d7005687456f7f1d8b46b6_da39a3ee5e6b4b0d3255bfef95601890afd80709.jpg" class="" style="height:50px;width:50px;border-radius:30px;" alt="Logo">*@
+                            </div>
+                            <div class="navbar-wrap d-none d-lg-flex">
+                                <ul class="left">
+                                    <li class="show">
+                                        <a href="#">Home</a>
+                                        <ul class="submenu">
+                                            <li class="active"><a href="~/">Welcome Home</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="~/home/About">About</a></li>
+                                    <li><a href="~/home/Overview">Overview</a></li>
+                                    <li><a href="~/home/Community">Community</a></li>
+                                    <li><a href="~/home/Members">All Members</a></li>
+                                </ul>
+
+
+                                <div class="logo">
+                                    <a href="#">
+                                        @* <img src="~/Geco/img/logo/h3_logo.png" alt="Logo">*@
+                                        <img src="~/img/logo/logo1.png" style="height:110px;width:100px;">
+
+                                    </a>
+                                </div>
+                                <ul class="right">
+                                    <li>
+                                        <a href="~/home/Pages">Pages</a>
+                                        <ul class="submenu">
+                                            <li><a href="upcoming-games.html">Upcoming Games</a></li>
+                                            <li><a href="game-single.html">Game Single</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="~/home/Store">Store</a></li>
+                                    <li>
+                                        <a href="~/home/Blog">Blog</a>
+                                        <ul class="submenu">
+                                            <li><a href="">News Page</a></li>
+                                            <li><a href="">News Details</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="~/home/Contact">contact</a></li>
+                                </ul>
+                            </div>
+                            <div class="header-action">
+                                <ul>
+
+
+
+                                    <li class="header-shop-cart">
+                                        <a href="#"><i class="fas fa-shopping-basket"></i><span>0</span></a>
+                                        <ul class="minicart">
+                                            <li class="d-flex align-items-start">
+                                                <div class="cart-img">
+                                                    <a href="#">
+                                                        <img src="img/product/cart_p01.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="cart-content">
+                                                    <h4>
+                                                        <a href="#">Xbox One Controller</a>
+                                                    </h4>
+                                                    <div class="cart-price">
+                                                        <span class="new">$229.9</span>
+                                                        <span>
+                                                            <del>$229.9</del>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                               
+                                                <div class="del-icon">
+                                                    <a href="#">
+                                                        <i class="far fa-trash-alt"></i>
+                                                    </a>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="total-price">
+                                                    <span class="f-left">Total:</span>
+                                                    <span class="f-right">$239.9</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkout-link">
+                                                    <a href="~/">Shopping Cart</a>
+                                                    <a class="red-color" href="~/">Checkout</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="header-search"><a href="#" data-toggle="modal" data-target="#search-modal"><i class="fas fa-search"></i></a></li>
+                                </ul>
+                            </div>
+ 
+                        </nav>
+                    </div>
+                    <div class="mobile-menu-wrap d-block d-lg-none">
+                        <nav>
+                            <div id="mobile-menu" class="navbar-wrap">
+                                <ul>
+                                    <li class="show">
+                                        <a href="#">Home</a>
+                                        <ul class="submenu">
+                                            <li><a href="~/">Welcome Home</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="~/home/About">About</a></li>
+                                    <li><a href="~/home/Overview">Overview</a></li>
+                                    <li><a href="~/home/Community">Community</a></li>
+                                    <li>
+                                        <a href="~/home/Pages">Pages</a>
+                                        <ul class="submenu">
+                                            <li><a href="~/">Upcoming Games</a></li>
+                                            <li><a href="~/">Game Single</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="~/home/Store">Store</a></li>
+                                    <li>
+                                        <a href="~/home/Blog">Blog</a>
+                                        <ul class="submenu">
+                                            <li><a href="~/">News Page</a></li>
+                                            <li><a href="~/">News Details</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="~/home/Contact">contact</a></li>
+
+                                    @if (Session["name"] != null)
+                                    {
+
+                                        <li class="header-shop-cart">
+                                            <a> @Session["name"]</a>
+                                            <ul class="minicart">
+                                                <li class="d-flex align-items-start">
+                                                    <div class="cart-img">
+                                                        <a href="#">
+                                                            <img src="img/product/cart_p01.jpg" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="cart-content">
+                                                        <h4>
+                                                            <a href="#">Xbox One Controller</a>
+                                                        </h4>
+                                                        <div class="cart-price">
+                                                            <span class="new">$229.9</span>
+                                                            <span>
+                                                                <del>$229.9</del>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="del-icon">
+                                                        <a href="#">
+                                                            <i class="far fa-trash-alt"></i>
+                                                        </a>
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <div class="total-price">
+                                                        <span class="f-left">Total:</span>
+                                                        <span class="f-right">$239.9</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkout-link">
+                                                        <a href="~/">Shopping Cart</a>
+                                                        <a class="red-color" href="~/">Checkout</a>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                    }
+                                    else
+                                    {
+
+
+
+
+                                        <li><a href="#" data-toggle="modal" data-target="#Registration"><i class="far fa-edit"></i>Register</a> &nbsp;  <a href="#" data-toggle="modal" data-target="#Login"><i class="far fa-edit"></i>sign in</a>
+                                    </li>
+                                       
+
+                                    }
+
+
+                                </ul>
+                            </div>
+
+                            <div class="header-action">
+                                <ul>
+                                    <li class="header-shop-cart">
+                                        <a href="#"><i class="fas fa-shopping-basket"></i><span>0</span></a>
+                                        <ul class="minicart">
+                                            <li class="d-flex align-items-start">
+                                                <div class="cart-img">
+                                                    <a href="#">
+                                                        <img src="img/product/cart_p01.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="cart-content">
+                                                    <h4>
+                                                        <a href="#">Xbox One Controller</a>
+                                                    </h4>
+                                                    <div class="cart-price">
+                                                        <span class="new">$229.9</span>
+                                                        <span>
+                                                            <del>$229.9</del>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="del-icon">
+                                                    <a href="#">
+                                                        <i class="far fa-trash-alt"></i>
+                                                    </a>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="total-price">
+                                                    <span class="f-left">Total:</span>
+                                                    <span class="f-right">$239.9</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkout-link">
+                                                    <a href="~/">Shopping Cart</a>
+                                                    <a class="red-color" href="~/">Checkout</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="header-search"><a href="#" data-toggle="modal" data-target="#search-modal"><i class="fas fa-search"></i></a></li>
+                                </ul>
+                            </div>
+
+                        </nav>
+                    </div>
+                    <div class="mobile-menu"></div>
+                </div>
+                <!-- Modal Search -->
+                <div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <form>
+                                <input type="text" placeholder="Search here...">
+                                <button><i class="fa fa-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-bottom-bg"></div>
+</header>
+<!-- header-area-end -->
+
+

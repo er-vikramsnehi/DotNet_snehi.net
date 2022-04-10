@@ -1,0 +1,245 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+<style>
+
+ .about-content, .about-panel {
+	 max-width: 50%;
+	 width: 50%;
+}
+ 
+ .about-panel {
+	 padding: 0;
+	 position: absolute;
+	 top: 0;
+	 right: 0;
+	 -webkit-animation: example 1.2s both ease-in;
+	 -moz-animation: example 1.2s both ease-in;
+	 animation: example 1.2s both ease-in;
+	 height: 100vh;
+}
+ .about-panel .photo-about {
+	 position:relative;
+	 top:15vh;
+	 height: 100vh !important;
+	 background-size: cover;
+	 overflow: hidden;
+}
+ .about-info {
+	 font-family: "Montserrat";
+	 position: absolute;
+	 z-index: 100100;
+	 top: 50%;
+	 color: white;
+	 text-align: center;
+	 width: 100%;
+}
+ .about-info .about-info-name {
+	 width: 100%;
+	 letter-spacing: 3px;
+	 font-weight: 500;
+	 font-size: 2.5vw;
+}
+ .about-info .about-info-contact {
+	 margin-top: 25px;
+	 padding-bottom: 100px;
+	 margin-bottom: 100px;
+	 height: 130px;
+}
+ .about-info .about-info-contact h4 {
+	 margin-bottom: 5px;
+	 font-weight: 300;
+	 font-size: 1.3vw;
+}
+ .about-info .about-info-contact p {
+	 font-size: 1.2vw;
+	 font-weight: 100;
+	 color: #b5b5b5;
+	 margin-top: 10px;
+	 margin-bottom: 0;
+}
+ .about-info .about-info-contact a {
+	 margin-bottom: 5px;
+	 font-weight: 300;
+	 font-size: 1.2vw;
+	 color: #e2a9e5;
+}
+ .about-content {
+	 float: left;
+	 padding-top: 30px;
+	 background: white;
+	 color: #4b384c;
+}
+ .about-content p, .about-content blockquote {
+	 font-size: 13px;
+	 line-height: 20px;
+	 letter-spacing: 0.07em;
+}
+ .about-content h1 {
+	 z-index: -1;
+	 color: #632c65;
+	 text-align: center;
+	 line-height: 90px;
+	 font-size: 90px;
+	 font-weight: 200;
+	 letter-spacing: -0.1em;
+	 width: 95%;
+	 margin-bottom: 10px;
+	 margin-top: 10px;
+}
+ @@media only screen and (max-width: 450px) {
+	 .about-content {
+		 padding-left: 40px;
+		 padding-right: 40px;
+	}
+}
+ .about-content .about-me {
+	 margin: 3% auto;
+	 text-align: justify;
+	 font-weight: 300;
+	 width: 63%;
+}
+ .about-content .about-me p {
+	 line-height: 23px;
+}
+ .about-content .about-me .row {
+	 height: 100vh;
+}
+ .Synopsis-highlightLine {
+	 width: 52px;
+	 height: 4px;
+	 background: #632c65;
+	 margin: 30px 0;
+}
+ .Synopsis-highlight {
+	 font-weight: 700 !important;
+	 font-size: 15px !important;
+	 line-height: 25px !important;
+	 width: 100%;
+	 color: #632c65;
+}
+/* Generates animations for cascading tiles */
+ .about-panel {
+	 height: 100%;
+	 height: 100%;
+	 height: 100%;
+}
+ .about-panel .about-info-contact {
+	 display: block;
+	 margin: 30px;
+}
+ .about-panel .about-info-contact .up-two {
+	 -webkit-animation-delay: 0.08s;
+	 -moz-animation-delay: 0.08s;
+	 animation-delay: 0.08s;
+	 transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+	 display: block;
+}
+ .about-panel .about-info-contact {
+	 display: block;
+	 margin: 30px;
+}
+ .about-panel .about-info-contact .up-three {
+	 -webkit-animation-delay: 0.16s;
+	 -moz-animation-delay: 0.16s;
+	 animation-delay: 0.16s;
+	 transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+	 display: block;
+}
+ .about-panel .about-info-contact {
+	 display: block;
+	 margin: 30px;
+}
+ .about-panel .about-info-contact .up-four {
+	 -webkit-animation-delay: 0.24s;
+	 -moz-animation-delay: 0.24s;
+	 animation-delay: 0.24s;
+	 transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+	 display: block;
+}
+ .perspective-container {
+	 transform: matrix(1, 0, 0, 1, 0, 0) !important;
+}
+ .photo-about {
+	 background: url("../../img/wallpaperflare.com_wallpaper (4).jpg") no-repeat center center;
+	 background-size: cover;
+	 z-index: 45;
+}
+ .hide-photo-filter {
+	 position: relative;
+	 top: 0;
+	 background-color: rgba(255, 30, 173, 0.2);
+	 z-index: 50;
+	 width: 100%;
+	 height: 100%;
+}
+
+
+</style>
+
+<div class="">
+    <div class="row">
+        <div class=" about-content animated fadeIn scrollable">
+            <h1 class="animated fadeIn one">about</h1>
+            <div class="about-me" style="transform: translateY(0px) translateZ(0px); margin-top:20px">
+                <div class="animated fadeIn two text-danger">
+                    <p>Hello.!, Welcome to Snehi Network, Here, we are serving All the Games to our users, and also offering players to earn real cash.</p>
+                    <p>Site is in Development</p>
+                </div>
+                <div class="Synopsis-highlightLine five" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                <div class="animated fadeIn three">
+                    <p class="Synopsis-highlight">
+                        Thanks for your patience<img src="~/img/centos-brands.svg" style="color:yellow;height:18px;width:18px;"/>, we are working on it. Keep Following us - <a href="https://instagram.com/snehi_net">snehi_net</a>
+                    </p>
+                </div>
+                <div class="Synopsis-highlightLine five" style=" transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                <div class="animated fadeIn four">
+                    <p> Come back soon. </p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="about-panel-wrapper" >
+            <div class=" about-panel animated fadeIn">
+                <div class="perspective-container">
+					
+                    <div class="zero photo-about animated fadeIn" style="transform:translateY(0px) translateZ(0px)">
+                        <div class="hide-photo-filter animated fadeIn"></div>
+                        <div class="about-info">
+                            <h3 class="about-info-name animated fadeInUp up-one">Snehi Games Limited</h3>
+                            <div class="about-info-contact">
+                                <h4 class="animated fadeInUp up-two"> We are here to deliver high profile games and higher margin rewards</h4>
+                                <p class="animated fadeInUp up-three" style="color:white;font-weight: 5px solid white;">Whitefield, Bangalore - INDIA</p>
+                                <a href="mailto:help@snehi.net" class="animated fadeInUp up-four">help@snehi.net</a>
+                           
+							
+								 
+
+
+
+
+
+
+
+
+
+
+
+
+
+							
+							</div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
